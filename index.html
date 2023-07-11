@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .navbar-menu {
+      display: none;
+    }
+
+    .navbar-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar-menu ul li {
+      margin-right: 10px;
+    }
+
+    .navbar-hamburger {
+      display: block;
+      cursor: pointer;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+      }
+
+      .navbar-menu.open {
+        display: block;
+      }
+    }
+  </style>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Logo</div>
+        <div class="navbar-hamburger">&#9776;</div>
+        <div class="navbar-menu">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <script>
+        // Get the navbar hamburger and menu elements
+        var hamburger = document.querySelector(".navbar-hamburger");
+        var menu = document.querySelector(".navbar-menu");
+    
+        // Toggle the menu on hamburger click
+        hamburger.addEventListener("click", function() {
+          menu.classList.toggle("open");
+        });
+      </script>
+</body>
+</html>
